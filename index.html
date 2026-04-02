@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ergo Mining Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="container">
+    <header>
+      <div class="logo">⛏️</div>
+      <h1>Ergo Mining Leaderboard</h1>
+      <p class="subtitle">Live block production rankings — who's mining Ergo right now?</p>
+    </header>
+
+    <div class="controls">
+      <div class="window-selector">
+        <span class="label">Block window:</span>
+        <button class="window-btn active" data-window="50">50</button>
+        <button class="window-btn" data-window="100">100</button>
+        <button class="window-btn" data-window="500">500</button>
+        <button class="window-btn" data-window="1000">1000</button>
+      </div>
+      <div class="refresh-info">
+        <span id="refresh-countdown">Refreshing in <span id="countdown">60</span>s</span>
+        <button id="refresh-btn">↺ Refresh Now</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Scanning the chain...</p>
+    </div>
+
+    <div id="main-content" class="hidden">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Blocks Analyzed</div>
+          <div class="stat-value" id="blocks-analyzed">—</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-label">Top Pool Dominance</div>
+          <div class="stat-value" id="top-dominance">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Unique Miners</div>
+          <div class="stat-value" id="unique-miners">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Avg Block Time</div>
+          <div class="stat-value" id="avg-block-time">—</div>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <h2>Block Share by Miner</h2>
+        <div class="chart-wrap">
+          <canvas id="leaderboard-chart"></canvas>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <div class="table-header">
+          <h2>Miner Rankings</h2>
+          <span class="last-updated" id="last-updated"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Miner</th>
+                <th>Blocks</th>
+                <th>Share</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody id="rankings-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="recent-section">
+        <h2>Recent Blocks</h2>
+        <div class="blocks-feed" id="blocks-feed"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Data from <a href="https://api.ergoplatform.com" target="_blank">Ergo Explorer API</a> · Auto-refreshes every 60s</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
