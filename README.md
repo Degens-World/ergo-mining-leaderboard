@@ -2,9 +2,7 @@
 
 ## Live Demo
 
-**[https://ad-ergo-mining-leaderboard-17750980.vercel.app](https://ad-ergo-mining-leaderboard-17750980.vercel.app)**
-
-Live block production rankings for the Ergo blockchain — see which mining pools and miners are dominating right now.
+**[https://ad-ergo-mining-leaderboard-1775099472387.vercel.app](https://ad-ergo-mining-leaderboard-1775099472387.vercel.app)**
 
 ## Features
 
