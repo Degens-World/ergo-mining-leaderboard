@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-**[https://ad-ergo-mining-leaderboard-1775099472387.vercel.app](https://ad-ergo-mining-leaderboard-1775099472387.vercel.app)**
+**[https://ad-ergo-mining-leaderboard-17750980.vercel.app)**
 
 ## Features
 
